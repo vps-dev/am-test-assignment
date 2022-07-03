@@ -1,0 +1,12 @@
+fragment Film on Film {
+  id
+  title
+}
+
+query Films {
+  allFilms {
+    films {
+      ...Film
+    }
+  }
+}

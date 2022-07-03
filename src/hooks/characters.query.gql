@@ -1,0 +1,22 @@
+fragment CharacterFilm on Film {
+  id
+  title
+}
+
+fragment Character on Person {
+  id
+  name
+  filmConnection {
+    films {
+      ...CharacterFilm
+    }
+  }
+}
+
+query Characters($first: Int) {
+  allPeople(first: $first) {
+    people {
+      ...Character
+    }
+  }
+}
